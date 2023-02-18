@@ -81,9 +81,11 @@ export default function SignUpModal({ open, onClose, onConfirm }) {
 
         <pre className="mb-5 flex flex-col rounded-md border-2 border-dotted border-white/25 p-4">
           <code className="mb-2 whitespace-pre-wrap break-all text-base">
-            {user ? user.privateKey.toString(16) : ''}
+            {user?.privateKey ? user.privateKey.toString(16) : ''}
           </code>
-          <CopyButton content={user ? user.privateKey.toString(16) : ''}>
+          <CopyButton
+            content={user?.privateKey ? user.privateKey.toString(16) : ''}
+          >
             Copy
           </CopyButton>
         </pre>
